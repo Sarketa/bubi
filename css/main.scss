@@ -1,0 +1,217 @@
+// Custom.scss
+// Option A: Include all of Bootstrap
+
+// Include any default variable overrides here (though functions won't be available)
+
+// Include custom variables default overrides here
+
+$primary: #2f007f;
+$teal: #79dfc1;
+
+$theme-colors: (
+  "primary": $primary,
+);
+
+// Create your own map
+
+$custom-color: (
+  "icon-background": rgb(47, 0, 127),
+);
+
+// Merge maps
+$theme-colors: map-merge($theme-colors, $custom-color);
+
+@import "./bootstrap/scss/bootstrap";
+// Then add additional custom code here
+
+/******HEADER******/
+.annoucement-bar {
+  font-size: 0.8rem;
+  &__list {
+    padding-left: 10px;
+    margin: 0;
+    list-style-type: none;
+    display: inline-flex;
+
+    li {
+      margin: 0 10px;
+      display: flex;
+      align-items: center;
+
+      a {
+        text-decoration: none;
+        color: #666666;
+      }
+      & a:hover {
+        color: black;
+      }
+
+      .bi {
+        display: inline-flex;
+        justify-items: center;
+        align-items: center;
+        color: var(--bs-primary);
+      }
+    }
+    button {
+      background-color: var(--bs-primary);
+      border-radius: 7px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      & a {
+        color: white;
+        text-decoration: none;
+      }
+      & i {
+        color: #ffcd00;
+        margin-right: 5px;
+      }
+    }
+  }
+  @include media-breakpoint-down(lg) {
+    //display: none;
+  }
+}
+
+/***Search fild***/
+.aws-container .aws-show-clear .aws-search-field {
+  border-width: 1px;
+  border-style: dashed;
+}
+.aws-container .aws-search-field {
+  border-top-left-radius: 10px !important;
+  border-bottom-left-radius: 10px !important;
+  border-top-right-radius: 10px !important;
+  border-bottom-right-radius: 10px !important;
+}
+.btn-warning {
+  background-color: #ffcd00;
+  color: black;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/*Main Menu*/
+.main-navigation {
+  font-weight: 500;
+  & li {
+    color: var(--bs-primary);
+    & a {
+      color: var(--bs-primary);
+      box-shadow: 1px 2px 3px rgba($color: #000000, $alpha: 0.2);
+      padding: 0.5rem 1.6rem;
+      margin: 5px !important;
+      font-size: 14px;
+      border-radius: 7px;
+    }
+  }
+  .current-menu-item {
+    background-color: var(--bs-primary);
+    & a {
+      color: white;
+    }
+  }
+}
+
+/*Mega menu*/
+.gm-menu-btn {
+  position: absolute !important;
+  top: 25px !important;
+  right: -70px !important;
+  padding: 0.5rem 0.5rem !important;
+  border-radius: 7px !important;
+  background-color: #ffcd00 !important;
+  min-width: 210px !important;
+}
+.gm-menu-btn--text {
+  text-indent: -9999px;
+  line-height: 0; /* Collapse the original line */
+}
+.gm-menu-btn--text::after {
+  content: "NAŠI PROIZVODI";
+  text-indent: 0;
+  display: block;
+  line-height: initial; /* New content takes up original line height */
+  font-size: 14px;
+  font-weight: 600;
+  margin-left: 15px;
+}
+
+.nav-dugme {
+  @include media-breakpoint-down(lg) {
+    display: none !important;
+  }
+}
+.sortiraj {
+  border: 0;
+  box-shadow: 1px 2px 5px rgba($color: #000000, $alpha: 0.2);
+  border-radius: 7px;
+}
+select.orderby {
+  border: none;
+  width: 100%;
+  padding: 1rem;
+}
+
+/****footer***/
+.footer-style {
+  position: relative;
+  background-color: #e5d1ff;
+  background-image: url("../img/Intersect.png");
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  & .dugme {
+    background-color: var(--bs-primary);
+    border-radius: 7px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    & a {
+      color: white;
+      text-decoration: none;
+    }
+    & i {
+      color: #ffcd00;
+      margin-right: 5px;
+    }
+  }
+  & img:last-child {
+    width: 200px;
+    height: 330px;
+    position: absolute;
+    bottom: 0px;
+    right: 60px;
+    @include media-breakpoint-down(xl) {
+      display: none !important;
+    }
+  }
+  & #btn-back-to-top {
+    position: absolute;
+    top: -20px;
+    right: 200px;
+    background-color: #ffcd00;
+    width: 50px;
+    height: 50px;
+    @include media-breakpoint-down(md) {
+      position: absolute;
+      top: -20px;
+      right: 50px;
+    }
+  }
+  & p {
+    margin-bottom: 0 !important;
+  }
+  & .bi {
+    color: var(--bs-primary);
+  }
+}
+/****site-info****/
+
+.site-info {
+  text-align: center;
+}
+
+/****back-to-top-button****/
